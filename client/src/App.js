@@ -10,16 +10,17 @@ import HeroHeader from './components/HeroHeader/HeroHeader'
 function App() {
   return (
     <div className="app">
-      <h1>BeerCode</h1>
       <HeroHeader/>
-      <Switch>
-        <Redirect exact from="/" to="/home"/>
-        <Route path="/home" render={(routeProps) => <Home {...routeProps}/>}/>
-        <Route exact path="/tutorials/:topic" render={(routeProps) => <TopicIntro {...routeProps}/>}/>
-        <Route path="/tutorials/:topic/:topicid" render={(routeProps) => <TopicContent {...routeProps}/>}/>
-        <Route path="/about" render={(routeProps) => <About {...routeProps}/>}/>
-        <Route path="/contact" render={(routeProps) => <Contact {...routeProps}/>}/>
-      </Switch>
+      <main className="top-level-wrapper">
+        <Switch>
+          <Redirect exact from="/" to="/home"/>
+          <Route path="/home" render={(routeProps) => <Home {...routeProps}/>}/>
+          <Route exact path="/tutorials/:topic" render={(routeProps) => <TopicIntro {...routeProps}/>}/>
+          <Route path="/tutorials/:topic/:topicid" render={(routeProps) => <TopicContent {...routeProps}/>}/>
+          <Route path="/about" render={(routeProps) => <About {...routeProps}/>}/>
+          <Route path="/contact" render={(routeProps) => <Contact {...routeProps}/>}/>
+        </Switch>
+      </main>
     </div>
   );
 }

@@ -1,0 +1,27 @@
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+
+.hero-header{
+  background-color: $primary-color;
+  height: 60vh;
+  border-bottom-right-radius: 40% 15%;
+  border-bottom-left-radius: 40% 15%;
+  @include flex-center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  &__logo{
+    color: $secondary-color;
+    width: 60vw;
+    max-width: 250px;
+    position: sticky;
+    top: 40px;
+
+    &-v2{
+      height: 60vw;
+      max-height: 250px;
+    }
+  }
+}
