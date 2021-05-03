@@ -19,10 +19,10 @@ As this project is in the early stages of development, the architecture of the p
 - [x] Set up initial folder structure
 - [x] Add page architecture with react router
 - [ ] Build front-end components (mobile-first)
-- [ ] Create custom artwork and logos
+- [x] Create custom artwork and logos
 - [ ] Research databse integration methods
-- [ ] Buid express back-end routes with mock-data
-- [ ] Add fetch calls to front-end
+- [x] Buid express back-end routes with mock-data
+- [x] Add fetch calls to front-end
 - [ ] Create database structure with either MySQL or mongoDB
 - [ ] Integrate AWS file hosting
 - [ ] Begin adding tutorials

@@ -1,0 +1,74 @@
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/animations' as *;
+
+.clip-control {
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+.header-padding{
+  height: 25vh;
+  width: 100%;
+  background-color: $primary-color;
+}
+
+.logo-wrapper{
+  background-color: $primary-color;
+  width: 100%;
+  height: 16.95vh;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  @include flex-center;
+
+  &__logo-code{
+    width: 40%;
+    max-width: 200px;
+    position: absolute;
+    bottom: 3vh;
+    backface-visibility: hidden;
+    animation: logo-flip .6s ease-in-out forwards;
+
+    &--inactive{
+      width: 40%;
+      max-width: 200px;
+      position: absolute;
+      bottom: 3vh;
+      backface-visibility: hidden;
+      animation: logo-flip-inactive .6s ease-in-out forwards;
+    }
+  }
+
+  &__logo-bottle{
+    height: 200%;
+    position: absolute;
+    bottom: -3vh;
+    backface-visibility: hidden;
+    animation: logo-flip .6s ease-in-out forwards;
+
+
+    &--inactive{
+      height: 200%;
+      position: absolute;
+      bottom: -3vh;
+      backface-visibility: hidden;
+      animation: logo-flip-inactive .6s ease-in-out forwards;
+    }
+  }
+}
+
+.hero-header{
+  background-color: $primary-color;
+  height: 20vh;
+  width: 100%;
+  margin-bottom: 10vh;
+  position: sticky;
+  top: 0;
+  clip-path: url(#header-clip-path);
+  @include flex-center;
+  
+
+}

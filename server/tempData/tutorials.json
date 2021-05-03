@@ -1,0 +1,50 @@
+[
+  {
+    "topicName": "HTML",
+    "topicId": "f23fwr2qedd2q",
+    "tutorials": [
+      {
+        "videoId": "112edasf32dws",
+        "videoSrc": "https://www.fakevideo.com",
+        "videoTitle": "What is HTML?"
+      },
+      {
+        "videoId": "dsfj98d2",
+        "videoSrc": "https://www.fakevideo.com",
+        "videoTitle": "What are semantic elements?"
+      }
+    ]
+  },
+  {
+    "topicName": "CSS",
+    "topicId": "f23w9eudjs",
+    "tutorials": [
+      {
+        "videoId": "g68ityu7",
+        "videoSrc": "https://www.fakevideo.com",
+        "videoTitle": "What is CSS?"
+      },
+      {
+        "videoId": "dsfj98d2",
+        "videoSrc": "https://www.fakevideo.com",
+        "videoTitle": "What is the box model?"
+      }
+    ]
+  },
+  {
+    "topicName": "JavaScript",
+    "topicId": "092ur3joidesd",
+    "tutorials": [
+      {
+        "videoId": "112edasf32dws",
+        "videoSrc": "https://www.fakevideo.com",
+        "videoTitle": "What is JavaScript?"
+      },
+      {
+        "videoId": "dsfj98d2",
+        "videoSrc": "https://www.fakevideo.com",
+        "videoTitle": "Introduction to functions?"
+      }
+    ]
+  }
+]
