@@ -1,4 +1,6 @@
 @use './styles/global.scss' as *;
+@use './styles/partials/variables' as *;
+@use './styles/partials/mixins' as *;
 
 html, body {
   margin: 0;
@@ -13,6 +15,12 @@ html, body {
 }
 
 .top-level-wrapper{
-  padding: 0 16px;
   min-height: 200vh;
+  padding: 0 $mobile-spacing;
+  @include tablet-adapt{
+    padding: 0 $tablet-spacing;
+  }
+  @include desktop-adapt{
+    padding: 0 $desktop-spacing;
+  }
 }
