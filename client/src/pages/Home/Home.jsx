@@ -18,9 +18,12 @@ function Home({tutorialData}) {
         contact David through the 'Contact' page.
       </p>
       <p className="home__content">
-        Otherwise, crack a cold one, get comfortable and click on one of the links below to get started
+        Otherwise, crack a cold one, get comfortable and click on one of the links below to get started:
       </p>
       <InlineNav tutorialData={tutorialData}/>
+      <p className="home__content">
+        Happy Coding!
+      </p>
     </main>
   )
 }

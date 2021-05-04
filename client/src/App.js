@@ -29,8 +29,10 @@ function App() {
           <Route path="/home" render={(routeProps) => <
             Home {...routeProps} tutorialData={tutorialData}/>}
           />
-          <Route exact path="/tutorials/:topic" render={(routeProps) => <TopicIntro {...routeProps}/>}/>
-          <Route path="/tutorials/:topic/:topicid" render={(routeProps) => <TopicContent {...routeProps}/>}/>
+          <Route exact path="/tutorials/:topic" render={(routeProps) => 
+            <TopicIntro {...routeProps} tutorialData={tutorialData}/>}/>
+          <Route path="/tutorials/:topic/:topicId" render={(routeProps) => 
+            <TopicContent {...routeProps} tutorialData={tutorialData}/>}/>
           <Route path="/about" render={(routeProps) => <About {...routeProps}/>}/>
           <Route path="/contact" render={(routeProps) => <Contact {...routeProps}/>}/>
         </Switch>

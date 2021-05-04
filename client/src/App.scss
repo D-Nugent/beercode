@@ -15,7 +15,6 @@ html, body {
 }
 
 .top-level-wrapper{
-  min-height: 200vh;
   padding: 0 $mobile-spacing;
   @include tablet-adapt{
     padding: 0 $tablet-spacing;

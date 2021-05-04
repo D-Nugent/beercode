@@ -46,5 +46,69 @@
         "videoTitle": "Introduction to functions?"
       }
     ]
+  },
+  {
+    "topicName": "React",
+    "topicId": "3qw2rewqaas",
+    "tutorials": [
+      {
+        "videoId": "qwdqwdwq23r32",
+        "videoSrc": "https://www.fakevideo.com",
+        "videoTitle": "What is React?"
+      },
+      {
+        "videoId": "322wd32d",
+        "videoSrc": "https://www.fakevideo.com",
+        "videoTitle": "React Architecture"
+      }
+    ]
+  },
+  {
+    "topicName": "Node",
+    "topicId": "2e213e332e2",
+    "tutorials": [
+      {
+        "videoId": "2c06afa7-4e53-4912-8c1a-7690041f940d",
+        "videoSrc": "https://www.fakevideo.com",
+        "videoTitle": "What is Node?"
+      },
+      {
+        "videoId": "0246fd29-859f-4381-b238-456d98fbafa8",
+        "videoSrc": "https://www.fakevideo.com",
+        "videoTitle": "Setting up a server with Express"
+      }
+    ]
+  },
+  {
+    "topicName": "Firebase",
+    "topicId": "daede333-0ddf-4c69-b580-a914931e0888",
+    "tutorials": [
+      {
+        "videoId": "20bcbf89-a046-4069-805e-62277266e1a2",
+        "videoSrc": "https://www.fakevideo.com",
+        "videoTitle": "What is firebase?"
+      },
+      {
+        "videoId": "41fd1727-7f66-4ac1-8fcb-dde580693333",
+        "videoSrc": "https://www.fakevideo.com",
+        "videoTitle": "Setting up Firebase Authentication"
+      }
+    ]
+  },
+  {
+    "topicName": "Miscellaneous",
+    "topicId": "7f60f5ec-44b7-4a3e-a912-08b1175dfac5",
+    "tutorials": [
+      {
+        "videoId": "01dc2afe-2530-4517-a163-32238fbefe8f",
+        "videoSrc": "https://www.fakevideo.com",
+        "videoTitle": "Popular extensions in VS Code"
+      },
+      {
+        "videoId": "fb141924-e723-47b3-b3f0-c76b1bd7aa66",
+        "videoSrc": "https://www.fakevideo.com",
+        "videoTitle": "NPM vs YARN"
+      }
+    ]
   }
 ]

@@ -1,4 +1,5 @@
 import React,{useState, useEffect} from 'react';
+import {Link} from 'react-router-dom';
 import BeerCodeLogo from '../../assets/logos/beercode.svg'
 import BeerCodeLogov2 from '../../assets/logos/beercode-bottle.svg'
 import './HeroHeader.scss';
@@ -22,13 +23,19 @@ function HeroHeader() {
     <div className="header-padding"></div>
     <div className="logo-wrapper">
       {window.scrollY !==0 &&
-      <img src={BeerCodeLogo} alt="Beer code barcode" 
-      className={scrolled===true?'logo-wrapper__logo-code':'logo-wrapper__logo-code--inactive'}
-      />
+      <Link to="/" className="logo-wrapper__link">
+        <img src={BeerCodeLogo} 
+          alt="Beer code barcode" 
+          className={scrolled===true?'logo-wrapper__logo-code':'logo-wrapper__logo-code--inactive'}
+        />
+      </Link>
       }
-      <img src={BeerCodeLogov2} alt="Beer code bottle" 
-        className={scrolled===false?'logo-wrapper__logo-bottle':'logo-wrapper__logo-bottle--inactive'}
-      />
+      <Link to="/" className="logo-wrapper__link">
+        <img src={BeerCodeLogov2} 
+          alt="Beer code bottle" 
+          className={scrolled===false?'logo-wrapper__logo-bottle':'logo-wrapper__logo-bottle--inactive'}
+        />
+      </Link>
     </div>
     <header className="hero-header">
     </header>
