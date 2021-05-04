@@ -24,36 +24,48 @@
   z-index: 1;
   @include flex-center;
 
-  &__logo-code{
+  &__link{
     width: 40%;
     max-width: 200px;
     position: absolute;
     bottom: 3vh;
+    @include flex-center;
+  }
+
+  &__logo-code{
+    width: 100%;
     backface-visibility: hidden;
     animation: logo-flip .6s ease-in-out forwards;
+    user-select: none;
 
     &--inactive{
-      width: 40%;
-      max-width: 200px;
-      position: absolute;
-      bottom: 3vh;
+      width: 100%;
       backface-visibility: hidden;
+      user-select: none;
       animation: logo-flip-inactive .6s ease-in-out forwards;
     }
   }
 
   &__logo-bottle{
-    height: 200%;
-    position: absolute;
-    bottom: -3vh;
+    width: 40%;
+    position: relative;
+    bottom: -6vh;
+    user-select: none;
+    @include desktop-adapt{
+      bottom: -10vh
+    }
     backface-visibility: hidden;
     animation: logo-flip .6s ease-in-out forwards;
 
 
     &--inactive{
-      height: 200%;
-      position: absolute;
-      bottom: -3vh;
+      width: 40%;
+      position: relative;
+      bottom: -6vh;
+      user-select: none;
+      @include desktop-adapt{
+        bottom: -10vh
+      }
       backface-visibility: hidden;
       animation: logo-flip-inactive .6s ease-in-out forwards;
     }
@@ -64,7 +76,7 @@
   background-color: $primary-color;
   height: 20vh;
   width: 100%;
-  margin-bottom: 10vh;
+  margin-bottom: 5vh;
   position: sticky;
   top: 0;
   clip-path: url(#header-clip-path);

@@ -1,9 +1,23 @@
+@use '../../styles/partials/variables' as *;
+
 .inline-nav{
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+ 
   &__link{
     background-color: lightgray;
     color: white;
     text-decoration: none;
     padding: 1% 2%;
     margin: 2% 1%;
+
+    &:hover{
+      background-color: $offset-secondary-color;
+    }
+
+    &--active{
+      background-color: $offset-primary-color;
+    }
   }
 }

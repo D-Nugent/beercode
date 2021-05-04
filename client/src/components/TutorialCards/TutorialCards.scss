@@ -1,0 +1,32 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+
+.tutorial-card{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid lightgray;
+  text-decoration: none;
+
+  &__number{
+    width: 20%;
+    @include flex-center;
+    font-size: 1.8rem;
+    border-right: 2px solid $offset-secondary-color;
+    color: $primary-color;
+  }
+
+  &__title{
+    color:$offset-primary-color;
+    margin-bottom: 0;
+  }
+
+  &__details{
+    padding: 1% 2%;
+  }
+
+  &__desc{
+    margin-top: 0;
+    color: $primary-color;
+  }
+}
