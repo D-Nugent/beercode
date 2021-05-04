@@ -21,7 +21,7 @@ function Home({tutorialData}) {
         Otherwise, crack a cold one, get comfortable and click on one of the links below to get started:
       </p>
       <InlineNav tutorialData={tutorialData}/>
-      <p className="home__co">
+      <p className="home__content">
         Happy Coding!
       </p>
     </main>
