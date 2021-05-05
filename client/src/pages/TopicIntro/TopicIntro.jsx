@@ -1,7 +1,7 @@
 import React,{useState,useEffect} from 'react';
 import InlineNav from '../../components/InlineNav/InlineNav';
 import {useParams} from 'react-router-dom';
-import TutorialCards from '../../components/TutorialCards/TutorialCards';
+import TutorialList from '../../components/TutorialList/TutorialList';
 import './TopicIntro.scss';
 
 function TopicIntro({tutorialData}) {
@@ -30,7 +30,7 @@ function TopicIntro({tutorialData}) {
         videos on file relating to this topic.
         </p>
         {!!tutorials &&
-          <TutorialCards tutorials={tutorials}/>
+          <TutorialList tutorials={tutorials}/>
         }
       </>
       }

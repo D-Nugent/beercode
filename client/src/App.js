@@ -26,9 +26,8 @@ function App() {
       <main className="top-level-wrapper">
         <Switch>
           <Redirect exact from="/" to="/home"/>
-          <Route path="/home" render={(routeProps) => <
-            Home {...routeProps} tutorialData={tutorialData}/>}
-          />
+          <Route path="/home" render={(routeProps) => 
+          <Home {...routeProps} tutorialData={tutorialData}/>}/>
           <Route exact path="/tutorials/:topic" render={(routeProps) => 
             <TopicIntro {...routeProps} tutorialData={tutorialData}/>}/>
           <Route path="/tutorials/:topic/:topicId" render={(routeProps) => 

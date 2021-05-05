@@ -1,4 +1,6 @@
 @use './variables' as *;
+@use './animations' as *;
+
 // Media Queries
 @mixin tablet-adapt {
   @media screen and (min-width: $tablet-breakpoint) {
@@ -12,8 +14,37 @@
   }
 }
 
+// Positioning
 @mixin flex-center {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+// Component-styling
+@mixin btn-styling {
+  background-color: lightgray;
+  color: white;
+  text-decoration: none;
+  padding: 1% 2%;
+  margin: 2% 1%;
+
+  &:hover{
+    animation: btn-focus .4s linear forwards;
+  }
+
+  &--active{
+    animation: none !important;
+    background-color: $offset-primary-color;
+  }
+}
+
+@mixin link-styling {
+  text-decoration: none;
+  color: $offset-primary-color;
+  font-weight: 600;
+
+  &:hover{
+    cursor: pointer;
+  }
 }
