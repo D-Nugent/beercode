@@ -1,10 +1,65 @@
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/animations' as *;
+
 .topic-content{
+  &__back-link{
+    @include btn-styling;
+    margin-left: 0;
+  }
+
   &__video-player{
     width: 100%;
     max-width: 720px;
   }
+
   &__video-details{
     width: 100%;
     max-width: 720px;
+  }
+
+  &__info{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__views{
+    display: flex;
+    align-items: center;
+    margin: 0;
+  }
+
+  &__likes{
+    display: flex;
+    align-items: center;
+    margin: 0;
+
+    & img{
+      cursor: pointer;
+      position: relative;
+      top: 10%;
+    }
+  }
+
+  &__icon{
+    margin-right: 4%;
+    height: 80%;
+
+    &--liked{
+      animation: heart-pulse .6s linear;
+    }
+  }
+
+  &__demo-link{
+    @include link-styling;
+  }
+
+  &__subtitle{
+    margin-bottom: 0;
+  }
+
+
+  &__tutorials-link{
+    @include link-styling;
   }
 }

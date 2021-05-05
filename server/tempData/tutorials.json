@@ -6,12 +6,16 @@
       {
         "videoId": "112edasf32dws",
         "videoSrc": "https://www.fakevideo.com",
-        "videoTitle": "What is HTML?"
+        "videoTitle": "What is HTML?",
+        "videoViews": 1342,
+        "videoLikes": 437
       },
       {
         "videoId": "dsfj98d2",
         "videoSrc": "https://www.fakevideo.com",
-        "videoTitle": "What are semantic elements?"
+        "videoTitle": "What are semantic elements?",
+        "videoViews": 1342,
+        "videoLikes": 437
       }
     ]
   },
@@ -22,12 +26,16 @@
       {
         "videoId": "g68ityu7",
         "videoSrc": "https://www.fakevideo.com",
-        "videoTitle": "What is CSS?"
+        "videoTitle": "What is CSS?",
+        "videoViews": 1342,
+        "videoLikes": 437
       },
       {
         "videoId": "dsfj98d2",
         "videoSrc": "https://www.fakevideo.com",
-        "videoTitle": "What is the box model?"
+        "videoTitle": "What is the box model?",
+        "videoViews": 1342,
+        "videoLikes": 437
       }
     ]
   },
@@ -38,12 +46,16 @@
       {
         "videoId": "112edasf32dws",
         "videoSrc": "https://www.fakevideo.com",
-        "videoTitle": "What is JavaScript?"
+        "videoTitle": "What is JavaScript?",
+        "videoViews": 1342,
+        "videoLikes": 437
       },
       {
         "videoId": "dsfj98d2",
         "videoSrc": "https://www.fakevideo.com",
-        "videoTitle": "Introduction to functions?"
+        "videoTitle": "Introduction to functions?",
+        "videoViews": 1342,
+        "videoLikes": 437
       }
     ]
   },
@@ -54,12 +66,16 @@
       {
         "videoId": "qwdqwdwq23r32",
         "videoSrc": "https://www.fakevideo.com",
-        "videoTitle": "What is React?"
+        "videoTitle": "What is React?",
+        "videoViews": 1342,
+        "videoLikes": 437
       },
       {
         "videoId": "322wd32d",
         "videoSrc": "https://www.fakevideo.com",
-        "videoTitle": "React Architecture"
+        "videoTitle": "React Architecture",
+        "videoViews": 1342,
+        "videoLikes": 437
       }
     ]
   },
@@ -70,12 +86,16 @@
       {
         "videoId": "2c06afa7-4e53-4912-8c1a-7690041f940d",
         "videoSrc": "https://www.fakevideo.com",
-        "videoTitle": "What is Node?"
+        "videoTitle": "What is Node?",
+        "videoViews": 1342,
+        "videoLikes": 437
       },
       {
         "videoId": "0246fd29-859f-4381-b238-456d98fbafa8",
         "videoSrc": "https://www.fakevideo.com",
-        "videoTitle": "Setting up a server with Express"
+        "videoTitle": "Setting up a server with Express",
+        "videoViews": 1342,
+        "videoLikes": 437
       }
     ]
   },
@@ -86,12 +106,16 @@
       {
         "videoId": "20bcbf89-a046-4069-805e-62277266e1a2",
         "videoSrc": "https://www.fakevideo.com",
-        "videoTitle": "What is firebase?"
+        "videoTitle": "What is firebase?",
+        "videoViews": 1342,
+        "videoLikes": 437
       },
       {
         "videoId": "41fd1727-7f66-4ac1-8fcb-dde580693333",
         "videoSrc": "https://www.fakevideo.com",
-        "videoTitle": "Setting up Firebase Authentication"
+        "videoTitle": "Setting up Firebase Authentication",
+        "videoViews": 1342,
+        "videoLikes": 437
       }
     ]
   },
@@ -102,12 +126,16 @@
       {
         "videoId": "01dc2afe-2530-4517-a163-32238fbefe8f",
         "videoSrc": "https://www.fakevideo.com",
-        "videoTitle": "Popular extensions in VS Code"
+        "videoTitle": "Popular extensions in VS Code",
+        "videoViews": 1342,
+        "videoLikes": 437
       },
       {
         "videoId": "fb141924-e723-47b3-b3f0-c76b1bd7aa66",
         "videoSrc": "https://www.fakevideo.com",
-        "videoTitle": "NPM vs YARN"
+        "videoTitle": "NPM vs YARN",
+        "videoViews": 1342,
+        "videoLikes": 437
       }
     ]
   }

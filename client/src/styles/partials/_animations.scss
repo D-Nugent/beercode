@@ -1,3 +1,6 @@
+@use './variables' as *;
+
+// Logo Animations
 @keyframes logo-flip {
   0% {
     transform: rotateY(180deg);
@@ -13,4 +16,15 @@
   100% {
     transform: rotateY(180deg);
   }
+}
+// Icon Animations
+@keyframes heart-pulse{
+  0% {transform: scale(1,1);}
+  50% {transform: scale(1.2,1.2);}
+  100% {transform: scale(1.0,1.0);}
+}
+// Button Animations
+@keyframes btn-focus {
+  0%{background-color: lightgray;}
+  100%{background-color: $offset-secondary-color;}
 }
