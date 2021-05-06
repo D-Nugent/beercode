@@ -9,7 +9,6 @@ import Contact from './pages/Contact/Contact'
 import HeroHeader from './components/HeroHeader/HeroHeader'
 import './App.scss';
 
-
 function App() {
   const [tutorialData, setTutorialData] = useState([]);
 

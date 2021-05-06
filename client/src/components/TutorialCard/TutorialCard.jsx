@@ -4,7 +4,7 @@ import './TutorialCard.scss';
 
 function TutorialCard({tutorial, indexPos}) {
   const params = useParams();
-  console.log(tutorial);
+  // console.log(tutorial);
   return (
     <Link 
       className="tutorial-card" 

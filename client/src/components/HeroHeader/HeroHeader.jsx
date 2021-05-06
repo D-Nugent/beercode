@@ -2,6 +2,7 @@ import React,{useState, useEffect} from 'react';
 import {Link} from 'react-router-dom';
 import BeerCodeLogo from '../../assets/logos/beercode.svg'
 import BeerCodeLogov2 from '../../assets/logos/beercode-bottle.svg'
+import Menu from './Menu/Menu';
 import './HeroHeader.scss';
 
 function HeroHeader() {
@@ -20,7 +21,9 @@ function HeroHeader() {
   
   return (
   <>
-    <div className="header-padding"></div>
+    <div className="header-padding">
+      <Menu/>
+    </div>
     <div className="logo-wrapper">
       {window.scrollY !==0 &&
       <Link to="/" className="logo-wrapper__link">
