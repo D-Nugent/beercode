@@ -1,0 +1,28 @@
+@use '../../styles/partials/animations' as *;
+
+.success-icon{
+  overflow: visible;
+  align-self: center;
+  position: absolute;
+  width: 40%;
+  left: 30%;
+  top: 40%;
+  animation: success-fade .5s linear 2.8s forwards;
+
+  &__circle{
+    animation: success-circle 1.4s ease-out .4s forwards;
+    stroke-dashoffset: 56px;
+    stroke-dasharray: 56px;
+  }
+  &__tick{
+    animation: success-tick .6s ease-in 1.4s forwards;
+    stroke-dashoffset: 17px;
+    stroke-dasharray: 17px;
+  }
+  &__text{
+    font-size: .4rem;
+    opacity: 0;
+    width: 100%;
+    animation: success-text .6s ease-in 1.4s forwards;
+  }
+}

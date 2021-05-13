@@ -1,0 +1,46 @@
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+
+.contact{
+  max-width: 720px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.contact-form{
+  display: flex;
+  flex-direction: column;
+
+  &__label{
+    color: $offset-primary-color;
+    margin-bottom: 8px;
+  }
+
+  &__field{
+    margin-bottom: $mobile-spacing;
+    border: none;
+    border-bottom: 1px solid $offset-primary-color;
+    font-size: 1rem;
+    width: 100%;
+    resize: vertical;
+  }
+
+  &__error{
+    color: crimson;
+    font-weight: 600;
+    margin-top: 0;
+  }
+
+  &__submit{
+    @include btn-styling;
+    border: none;
+    font-weight: 600;
+    letter-spacing: .4rem;
+    padding: 2% 2%;
+    margin: 2% 0;
+  }
+
+  &--success{
+    animation: success-form 4.4s ease forwards;
+  }
+}

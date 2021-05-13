@@ -1,0 +1,23 @@
+@use '../../styles/partials/mixins' as *;
+
+.about {
+  margin: 0 auto;
+
+  &__content-wrapper{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  &__content-col{
+    @include tablet-adapt{
+      max-width: 350px;
+    }
+  }
+  &__profile-image{
+    width: 100%;
+    max-width: 300px;
+    filter: grayscale(1);
+  }
+}

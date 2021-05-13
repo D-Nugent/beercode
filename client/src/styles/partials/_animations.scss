@@ -56,6 +56,36 @@
   0%{transform: rotateY(0deg);}
   100%{transform: rotateY(-90deg);}
 }
+
+@keyframes success-circle {
+  0%{stroke-dashoffset: 56px;}
+  100%{stroke-dashoffset: 0;}
+}
+
+@keyframes success-tick {
+  0%{stroke-dashoffset: 17px;}
+  100%{stroke-dashoffset: 0;}
+}
+
+@keyframes success-text {
+  0%{opacity: 0;}
+  100%{opacity: 1;}
+}
+
+@keyframes success-form {
+  0%{opacity: 1;}
+  30%{opacity: 0;}
+  50%{opacity: 0;}
+  70%{opacity: 0;}
+  100%{opacity: 1;}
+}
+
+@keyframes success-fade {
+  0%{opacity: 1;}
+  100%{opacity: 0;}
+  
+}
+
 // Button Animations
 @keyframes btn-focus {
   0%{background-color: lightgray;}

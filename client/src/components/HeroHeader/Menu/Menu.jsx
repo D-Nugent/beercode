@@ -66,7 +66,7 @@ function Menu() {
     <NavLink 
       className="top-nav__link"
       activeClassName="top-nav__link--active"
-      to={`/tutorials/html`}
+      to={`/tutorials/HTML`}
     >
       Tutorials
     </NavLink>

@@ -31,6 +31,7 @@
 
   &:hover{
     animation: btn-focus .4s linear forwards;
+    cursor: pointer;
   }
 
   &--active{

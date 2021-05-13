@@ -3,6 +3,7 @@ const app = express();
 const cors = require('cors');
 const dotenv = require('dotenv');
 const tutorials = require('./routes/tutorials');
+const contact = require('./routes/contact');
 
 dotenv.config();
 
@@ -14,5 +15,6 @@ app.use((req, _res, next) => {
 })
 
 app.use('/tutorials',tutorials)
+app.use('/contact',contact)
 
 app.listen(process.env.PORT, (err) => (err ? console.error(err):console.log('Look at me go!')))
