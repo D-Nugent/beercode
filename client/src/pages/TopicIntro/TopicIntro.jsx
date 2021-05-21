@@ -1,36 +1,46 @@
 import React,{useState,useEffect} from 'react';
 import InlineNav from '../../components/InlineNav/InlineNav';
 import {useParams} from 'react-router-dom';
+import axios from 'axios';
 import TutorialList from '../../components/TutorialList/TutorialList';
 import './TopicIntro.scss';
 
-function TopicIntro({tutorialData}) {
+function TopicIntro() {
   let params = useParams();
-  const [selectedTopic,setSelectedTopic] = useState({loaded: false,topicDetails:{}})
+  const [selectedTopic,setSelectedTopic] = useState({
+    loaded: false,
+    topicDetails:{},
+    topicTutorials:[],
+  })
 
   useEffect(() => {
-    setSelectedTopic({
-      loaded: true,
-      topicDetails: tutorialData.find(topic => topic.topicName===params.topic)
+    axios.get(`${process.env.REACT_APP_SERVER_URL}tutorials/${params.topic}`)
+    .then(res => {
+      const {categoryName,categoryDescription} = res.data[0]
+      setSelectedTopic({
+        loaded: true,
+        topicDetails: {
+          categoryName:categoryName,
+          categoryDescription: categoryDescription
+        },
+        topicTutorials: res.data
+      })
     })
-  }, [params,tutorialData])
+  }, [params.topic])
 
-  const {topicName, tutorials} = selectedTopic.topicDetails || {};
+  console.log(selectedTopic);
+
   return (
     <section className="topic-intro">
       {selectedTopic.loaded===true && 
         <>
-        <InlineNav tutorialData={tutorialData}/>
-        <h2 className="topic-intro__title">{topicName}</h2>
+        <InlineNav/>
+        <h2 className="topic-intro__title">{selectedTopic.topicDetails.categoryName}</h2>
         <p className="topic-intro__content">
-        This would be a paragraph which would give a very general overview on what
-        the topic covers. For example for HTML is would talk about how the videos
-        related to HTML are mostly for beginners and how the HTML makes up the basic
-        structure of every webpage. The section below would generate the list of
-        videos on file relating to this topic.
+          {selectedTopic.topicDetails.categoryDescription}
         </p>
-        {!!tutorials &&
-          <TutorialList tutorials={tutorials}/>
+        {!!selectedTopic.topicTutorials[0].tutorialName &&
+          <TutorialList tutorials={selectedTopic.topicTutorials}/>
         }
       </>
       }

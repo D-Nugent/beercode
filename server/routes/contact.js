@@ -30,6 +30,7 @@ router.route('/')
   transporter.sendMail(mailOptions, (err, info) => {
     console.log(err);
     console.log(info);
+    console.log('I ran');
     err?res.status(400):res.status(200).send(info)
   })
 })

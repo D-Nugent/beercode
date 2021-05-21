@@ -1,11 +1,9 @@
 const express = require('express');
 const app = express();
 const cors = require('cors');
-const dotenv = require('dotenv');
 const tutorials = require('./routes/tutorials');
 const contact = require('./routes/contact');
-
-dotenv.config();
+require('dotenv').config();
 
 app.use(express.json())
 app.use(cors())

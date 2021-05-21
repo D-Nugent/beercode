@@ -29,5 +29,17 @@
   &__desc{
     margin-top: 0;
     color: $primary-color;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+
+    // &::after{
+    //   content: '...';
+    //   position: absolute;
+    //   bottom: 0;
+    //   right: 0;
+    //   height: 1em;
+    // }
   }
 }

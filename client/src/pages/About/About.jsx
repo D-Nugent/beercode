@@ -17,7 +17,7 @@ function About() {
           </p>
           <p className="about__content">
             Created and maintained (with love) by David Nugent, a developer based in 
-            Brritish Columbia, Canada. The platform is in it's infancy current but it
+            Brritish Columbia, Canada. The platform is in it's infancy currently but it
             is planned for a new video tutorial to be published every two weeks.
           </p>
         </div>

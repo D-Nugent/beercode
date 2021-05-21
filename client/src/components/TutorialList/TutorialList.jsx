@@ -13,7 +13,7 @@ function TutorialList({tutorials}) {
       </p>
       {tutorials.map((tutorial,i) => {
         return (
-          <TutorialCard tutorial={tutorial} indexPos={i} key={tutorial.videoId}/>
+          <TutorialCard tutorial={tutorial} indexPos={i} key={tutorial.tutorialId}/>
         )
       })}
     </section>
