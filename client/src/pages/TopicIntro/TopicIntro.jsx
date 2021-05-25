@@ -14,7 +14,7 @@ function TopicIntro() {
   })
 
   useEffect(() => {
-    axios.get(`${process.env.REACT_APP_SERVER_URL}tutorials/${params.topic}`)
+    axios.get(`${process.env.REACT_APP_SERVER_URL}tutorials/category/${params.topic}`)
     .then(res => {
       const {categoryName,categoryDescription} = res.data[0]
       setSelectedTopic({

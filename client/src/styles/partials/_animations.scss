@@ -86,6 +86,21 @@
   
 }
 
+// Navigation Animations
+@keyframes side-nav-expand {
+  0%{max-height: 0;}
+  100%{max-height: 100vh;}
+}
+
+@keyframes side-nav-contract {
+  0%{max-height: 100vh;}
+  100%{max-height: 0;}
+}
+
+// @keyframes side-nav-icon-pos {
+  // 0%
+// }
+
 // Button Animations
 @keyframes btn-focus {
   0%{background-color: lightgray;}

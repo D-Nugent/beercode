@@ -1,0 +1,131 @@
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles//partials/animations' as *;
+
+.side-nav{
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  border-radius: 8px;
+  box-shadow: 4px 8px 8px $border-color;
+
+  &__category{
+    border: 1px solid $border-color;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2% 4%;
+
+    &--active{
+      border-bottom: 2px solid $offset-primary-color;
+    }
+
+    &:first-child{
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+    }
+
+    &:last-child{
+      border-bottom-left-radius: 8px;
+      border-bottom-right-radius: 8px;
+    }
+    
+    &:hover{
+      cursor: pointer;
+
+      & .side-nav__category-link:not(.side-nav__category-link--active){
+        color: $offset-secondary-color;
+      }
+    }
+  }
+
+  &__category-link{
+    font-weight: 600;
+    color: $primary-color;
+    text-decoration: none;
+
+    &--active{
+      color: $offset-primary-color;
+
+      &:hover{
+        color: $offset-primary-color;
+      }
+    }
+  }
+
+  &__expand{
+    margin: 4%;
+    font-size: 2rem;
+    font-weight: 600;
+    color: $offset-primary-color;
+    width: 24px;
+    overflow: visible;
+    transition-duration: 1s;
+    transition-property: all;
+
+    &--active{
+      transform: translateY(3px);
+    }
+
+    &-left{
+      transform-origin: right;
+      transition-duration: 1s;
+      transition-property: all;
+
+      &--active{
+        transform: rotateZ(45deg) translateX(2.5px);
+      }
+    }
+    &-right{
+      transform-origin: left;
+      transition-duration: 1s;
+      transition-property: all;
+
+      &--active{
+        transform: rotateZ(-45deg) translateX(-2.5px);
+      }
+    }
+  }
+
+  &__tutorial-link{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-decoration: none;
+    color: $primary-color;
+    border-left: 1px solid $border-color;
+    border-right: 1px solid $border-color;
+    border-bottom: 1px solid $border-color;
+
+    &:hover{
+      background-color: whitesmoke;
+    }
+
+    &--active{
+      background-color: whitesmoke;
+    }
+  }
+
+  &__tutorial-num{
+    @include flex-center;
+    width: 20%;
+    margin-right: 8px;
+    border-right: 2px solid $offset-secondary-color;
+  }
+
+  &__tutorial-wrapper{
+    text-decoration: none;
+    overflow: hidden;
+  
+    &--inactive{
+      animation-name: side-nav-contract;
+      animation-duration: 1.3s;
+      animation-delay: -1s;
+      animation-timing-function: ease-in-out;
+      animation-fill-mode: forwards;
+    }
+    &--active{
+      animation: side-nav-expand 1.3s 0s ease-in-out forwards;
+    }
+  }
+}

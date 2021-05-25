@@ -23,7 +23,7 @@
 
 // Component-styling
 @mixin btn-styling {
-  background-color: lightgray;
+  background-color: $border-color;
   color: white;
   text-decoration: none;
   padding: 1% 2%;

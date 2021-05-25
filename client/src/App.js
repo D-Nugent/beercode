@@ -1,12 +1,13 @@
 import {Switch, Route, Redirect} from 'react-router-dom';
 import {useEffect,useState} from 'react';
 import axios from 'axios';
-import Home from './pages/Home/Home'
-import TopicIntro from './pages/TopicIntro/TopicIntro'
-import TopicContent from './pages/TopicContent/TopicContent'
-import About from './pages/About/About'
-import Contact from './pages/Contact/Contact'
-import HeroHeader from './components/HeroHeader/HeroHeader'
+import Home from './pages/Home/Home';
+import TopicIntro from './pages/TopicIntro/TopicIntro';
+import TopicContent from './pages/TopicContent/TopicContent';
+import About from './pages/About/About';
+import Contact from './pages/Contact/Contact';
+import HeroHeader from './components/HeroHeader/HeroHeader';
+import SideNav from './components/SideNav/SideNav';
 import './App.scss';
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
     <div className="app">
       <HeroHeader/>
       <main className="top-level-wrapper">
+      <SideNav categories={tutorialData}/>
         <Switch>
           <Redirect exact from="/" to="/home"/>
           <Route path="/home" render={(routeProps) => 

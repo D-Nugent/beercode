@@ -1,4 +1,12 @@
-const {getAllCategories,getTutorials,getTutorialDetails,incrementViews,incrementLike,decrementLike} = require('../models/tutorials.model');
+const {
+  getAllCategories,
+  getTutorials,
+  getAllTutorials,
+  getTutorialDetails,
+  incrementViews,
+  incrementLike,
+  decrementLike
+} = require('../models/tutorials.model');
 
 const findCategories = (_req, res) => {
   getAllCategories((err,data) => {
@@ -12,9 +20,15 @@ const findTutorials = (req, res) => {
   })
 }
 
+const findAllTutorials = (_req, res) => {
+  getAllTutorials((err,data) => {
+    err?res.status(500).send(err):res.send(data);
+  })
+}
+
 const findTutorialDetails = (req, res) => {
   getTutorialDetails(req.params.tutorialId, (err,data) => {
-    err?res.status(500).send(err):res.send(data);
+    err?res.status(500).send(err):res.send(data[0]);
   })
 }
 
@@ -39,6 +53,7 @@ const removeLike = (req, res) => {
 module.exports = {
   findCategories,
   findTutorials,
+  findAllTutorials,
   findTutorialDetails,
   updateViews,
   addLike,

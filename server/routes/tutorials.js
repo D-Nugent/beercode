@@ -1,6 +1,13 @@
 const express = require('express');
 const router = express.Router();
-const {findCategories,findTutorials,findTutorialDetails,updateViews,addLike,removeLike} = require('../controllers/tutorials.controller')
+const {
+  findCategories,
+  findTutorials,
+  findAllTutorials,
+  findTutorialDetails,
+  updateViews,
+  addLike,
+  removeLike,} = require('../controllers/tutorials.controller')
 // const fs = require('fs');
 // const path = require('path');
 
@@ -17,10 +24,15 @@ router.route('/')
   findCategories(req,res);
 })
 
-router.route('/:categoryName')
+router.route('/category/:categoryName')
 .get((req, res) => {
   // Will return all tutorials that belong to a category
   findTutorials(req,res);
+})
+
+router.route('/alltutorials')
+.get((req, res) => {
+  findAllTutorials(req,res)
 })
 
 router.route('/tutorial/:tutorialId')

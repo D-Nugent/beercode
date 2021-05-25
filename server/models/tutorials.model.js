@@ -9,14 +9,22 @@ const getAllCategories = result => {
 }
 
 const getTutorials = (categoryName,result) => {
-  pool.query(`SELECT * FROM tutorialCategories LEFT JOIN tutorialList USING(categoryId) WHERE categoryName=${mysql.escape(categoryName)}`, (err,res) => {
+  pool.query(`SELECT * FROM tutorialCategories LEFT JOIN tutorialList USING(categoryId) WHERE categoryName=${mysql.escape(categoryName)} ORDER BY tutorialId`, (err,res) => {
+    err?result(err,null):result(null,res);
+    return;
+  })
+}
+
+const getAllTutorials = result => {
+  // pool.query(`SELECT * FROM tutorialCategories LEFT JOIN tutorialList USING(categoryId) ORDER BY categoryId`, (err,res) => {
+  pool.query(`SELECT * FROM tutorialList ORDER BY categoryId`, (err,res) => {
     err?result(err,null):result(null,res);
     return;
   })
 }
 
 const getTutorialDetails = (tutorialId,result) => {
-  pool.query(`SELECT * FROM tutorialDetails WHERE tutorialId=${mysql.escape(tutorialId)}`, (err,res) => {
+  pool.query(`SELECT * FROM tutorialList INNER JOIN tutorialDetails USING(tutorialId) WHERE tutorialId=${mysql.escape(tutorialId)}`, (err,res) => {
     err?result(err,null):result(null,res);
     return;
   })
@@ -55,6 +63,7 @@ const decrementLike = (tutorialId,result) => {
 module.exports = {
   getAllCategories,
   getTutorials,
+  getAllTutorials,
   getTutorialDetails,
   incrementViews,
   incrementLike,

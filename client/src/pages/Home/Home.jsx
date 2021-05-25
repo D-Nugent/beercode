@@ -10,7 +10,8 @@ function Home({tutorialData}) {
         Created by David Nugent, a developer based in British Columbia, Canada. Beercode
         seeks to provide free web development tutorials on a variety of topics and 
         frameworks with a focus on javascript. The tutorials are intended to be
-        accessible for complete beginners and have a laid back approach.
+        accessible for complete beginners and have a laid back approach. All current and
+        future tutorials will be free, as learning should be.
       </p>
       <p className="home__content">
         Should you have any questions about the content or if you would like 

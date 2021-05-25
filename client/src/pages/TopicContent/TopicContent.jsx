@@ -5,27 +5,46 @@ import LikeIcon from '../../assets/icons/like-icon.svg';
 import LikedIcon from '../../assets/icons/liked-icon.svg';
 import TutorialCard from '../../components/TutorialCard/TutorialCard';
 import './TopicContent.scss';
+import axios from 'axios';
 
-function TopicContent({tutorialData}) {
+function TopicContent() {
   let params = useParams();
   const [selectedTutorial,setSelectedTutorial] = useState({loaded: false,currentTutorial:{}})
   const [videoLiked,setVideoLiked] = useState(false);
 
   useEffect(() => {
-    let topic = tutorialData.find(topic => topic.topicName===params.topic) || [];
-    let currentTutorial = topic.tutorials.find(tutorial => tutorial.videoId===params.topicId) || [];
-    let currentVideoIndex = topic.tutorials.map(tutorial=>tutorial.videoId).indexOf(currentTutorial.videoId)
-    setSelectedTutorial({
-      loaded: true,
-      currentTutorial: currentTutorial,
-      currentVideoIndex: currentVideoIndex,
-      nextTutorial: topic.tutorials[currentVideoIndex+1] || null
+    const getCurrentTutorial = axios.get(`${process.env.REACT_APP_SERVER_URL}tutorials/tutorial/${params.topicId}`)
+    const getNextTutorials = axios.get(`${process.env.REACT_APP_SERVER_URL}tutorials/category/${params.topic}`)
+    const incrementTutorialViews = axios.put(`${process.env.REACT_APP_SERVER_URL}tutorials/tutorial/${params.topicId}`)
+    Promise.all([getCurrentTutorial,getNextTutorials,incrementTutorialViews]).then(res => {
+      setSelectedTutorial({
+        loaded: true,
+        currentTutorial: res[0].data,
+        nextTutorial: res[1].data.filter(tutorial => tutorial.tutorialId !== Number(params.topicId))
+      })
+    }).catch(err => {
+      console.error(`Error with tutorial data retrieval`, err)
     })
-  }, [params,tutorialData])
+  }, [params.topic,params.topicId,videoLiked])
+
   console.log(selectedTutorial);
 
   const toggleVideoLike = () => {
-    videoLiked===false?setVideoLiked(true):setVideoLiked(false);
+    if (videoLiked===false){
+      axios.put(`${process.env.REACT_APP_SERVER_URL}tutorials/tutorial/${params.topicId}/likes`)
+      .then(
+        setVideoLiked(true)
+      ).catch(err => {
+        console.error('There was an error liking the video', err);
+      })
+    } else {
+      axios.delete(`${process.env.REACT_APP_SERVER_URL}tutorials/tutorial/${params.topicId}/likes`)
+      .then(
+        setVideoLiked(false)
+      ).catch(err => {
+        console.error('There was an error unliking the video', err);
+      })
+    }
   }
 
   return (
@@ -38,16 +57,16 @@ function TopicContent({tutorialData}) {
       {selectedTutorial.loaded===true &&
       <>
         <h2 className="topic-content__title">
-          {selectedTutorial.currentTutorial.videoTitle}
+          {selectedTutorial.currentTutorial.tutorialName}
         </h2>
-        <video src="https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4" 
+        <video src={selectedTutorial.currentTutorial.tutorialVideoURL} 
           className="topic-content__video-player"
           controls
         />
         <div className="topic-content__info">
           <p className="topic-content__views">
             <img src={ViewIcon} alt="views" className="topic-content__icon"/>
-            {selectedTutorial.currentTutorial.videoViews}
+            {Number(selectedTutorial.currentTutorial.tutorialViews)===0?1:selectedTutorial.currentTutorial.tutorialViews}
           </p>
           <p className="topic-content__likes">
             <img 
@@ -56,17 +75,15 @@ function TopicContent({tutorialData}) {
               alt="likes" 
               className={`topic-content__icon ${videoLiked===false?'':'topic-content__icon--liked'}`}
             />
-            {selectedTutorial.currentTutorial.videoLikes}
+            {selectedTutorial.currentTutorial.tutorialLikes}
           </p>
         </div>
         <p className="topic-content__video-details">
-          This is an example of the type of video details that you might have
-          underneath a tutorial video. Here there will be a brief description
-          of what the video covers and links to resources as needed.
+          {selectedTutorial.currentTutorial.tutorialDescription}
         </p>
         <a 
           className="topic-content__demo-link"
-          href="https://github.com/D-Nugent/beercode"
+          href={selectedTutorial.currentTutorial.tutorialRepo}
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -75,8 +92,12 @@ function TopicContent({tutorialData}) {
         <h3 className="topic-content__subtitle">
           What's Next?
         </h3>
-        {selectedTutorial.nextTutorial!==null?
-        <TutorialCard tutorial={selectedTutorial.nextTutorial} indexPos={selectedTutorial.currentVideoIndex+1}/>
+        {selectedTutorial.nextTutorial.length>0?
+        selectedTutorial.nextTutorial.map((tutorial,i) => {
+          return (
+            <TutorialCard tutorial={tutorial} indexPos={i} key={tutorial.tutorialId}/>
+            )
+        } )
         :
         <p className="topic-content__finished">
           Looks like you have finished all of the tutorials that we have
